@@ -21,7 +21,7 @@ cd openssl-1.0.0h
 ./configure BSD-generic32 --openssldir=/tmp/openssl-1.0.0h-armv6 $OPENSSL_CONFIGURE_OPTIONS &> /tmp/openssl-1.0.0h-armv6.log
 perl -i -pe 's|static volatile sig_atomic_t intr_signal|static volatile int intr_signal|' crypto/ui/ui_openssl.c
 perl -i -pe 's|^CC= gcc|CC= /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc -arch armv6|g' Makefile
-perl -i -pe 's|^CFLAG= (.*)|CFLAG= -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk $1|g' Makefile
+perl -i -pe 's|^CFLAG= (.*)|CFLAG= -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk $1|g' Makefile
 make &> /tmp/openssl-1.0.0h-armv6.log
 make install &> /tmp/openssl-1.0.0h-armv6.log
 popd
@@ -36,7 +36,7 @@ cd openssl-1.0.0h
 ./configure BSD-generic32 --openssldir=/tmp/openssl-1.0.0h-armv7 $OPENSSL_CONFIGURE_OPTIONS >> /tmp/openssl-1.0.0h-armv7.log
 perl -i -pe 's|static volatile sig_atomic_t intr_signal|static volatile int intr_signal|' crypto/ui/ui_openssl.c
 perl -i -pe 's|^CC= gcc|CC= /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc -arch armv7|g' Makefile
-perl -i -pe 's|^CFLAG= (.*)|CFLAG= -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk $1|g' Makefile
+perl -i -pe 's|^CFLAG= (.*)|CFLAG= -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk $1|g' Makefile
 make &> /tmp/openssl-1.0.0h-armv7.log
 make install &> /tmp/openssl-1.0.0h-armv7.log
 popd
@@ -51,7 +51,7 @@ cd openssl-1.0.0h
 ./configure BSD-generic32 --openssldir=/tmp/openssl-1.0.0h-i386 $OPENSSL_CONFIGURE_OPTIONS >> /tmp/openssl-1.0.0h-i386.log
 perl -i -pe 's|static volatile sig_atomic_t intr_signal|static volatile int intr_signal|' crypto/ui/ui_openssl.c
 perl -i -pe 's|^CC= gcc|CC= /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc -arch i386|g' Makefile
-perl -i -pe 's|^CFLAG= (.*)|CFLAG= -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk $1|g' Makefile
+perl -i -pe 's|^CFLAG= (.*)|CFLAG= -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.1.sdk $1|g' Makefile
 make &> /tmp/openssl-1.0.0h-i386.log
 make install &> /tmp/openssl-1.0.0h-i386.log
 popd
